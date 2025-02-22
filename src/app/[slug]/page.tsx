@@ -6,6 +6,7 @@ import { MDXRemote, type MDXRemoteOptions } from "next-mdx-remote-client/rsc";
 import { Metadata } from "next";
 import { getFrontmatter } from "next-mdx-remote-client/utils";
 import components from "@/components/mdxComponents";
+import { Video } from "@/components/ui/video";
 
 type RecipeFrontmatter = {
   title: string;
@@ -53,14 +54,17 @@ export default async function Page({
   };
 
   return (
-    <>
-      <p>{frontmatter.video}</p>
+    <main className="space-y-4">
+      {frontmatter.video && (
+        <Video src={frontmatter.video} />
+      )}
+
       <MDXRemote
         source={strippedSource}
         options={options}
         components={components}
       />
-    </>
+    </main>
   );
 }
 

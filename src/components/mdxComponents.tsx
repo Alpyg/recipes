@@ -1,13 +1,11 @@
 import type { MDXComponents } from "next-mdx-remote-client/rsc";
 
 import { Card } from "@/components/ui/card";
-import { Section } from "@/components/ui/section";
 import { Video } from "@/components/ui/video";
 import { Checkbox } from "@/components/ui/checkbox";
 
 const components: MDXComponents = {
   Card,
-  Section,
   Video,
 
   h1: ({ children }) => <h1 className="text-2xl font-semibold">{children}</h1>,
