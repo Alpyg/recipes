@@ -57,9 +57,7 @@ export default async function Page({
     <main className="space-y-4">
       <h1 className="text-center text-xl font-semibold">{frontmatter.title}</h1>
 
-      {frontmatter.video && (
-        <Video src={frontmatter.video} />
-      )}
+      {frontmatter.video && <Video src={frontmatter.video} />}
 
       <MDXRemote
         source={strippedSource}
